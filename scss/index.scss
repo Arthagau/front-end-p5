@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #f3e9f1;
+  & .nav-item {
+    font-size: 1.4rem;
+  }
+}
+
+.jumbotron {
+  background-color: #955df596;
+  height: 200px;
+  h1 {
+    padding-top: 2%;
+  }
+}
+
+.products {
+  margin-top: 25px;
+}
+
+.card {
+  font-size: 1.3rem;
+  margin: 40px;
+  & a {
+    text-decoration: none;
+    color: black;
+  }
+  &-img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+.footer {
+  background-color: gray;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  & ul {
+    margin: 0;
+    list-style-type: none;
+    font-size: 1.3rem;
+    & li {
+      padding: 5px;
+    }
+    & a {
+      text-decoration: none;
+    }
+  }
+}

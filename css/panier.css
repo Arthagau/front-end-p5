@@ -1,0 +1,85 @@
+.basket {
+  display: flex;
+  justify-content: space-between;
+  min-height: 80%;
+  margin: 5%;
+  max-width: 70vw;
+}
+.basket-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 5% 25% 0 0;
+  height: 15%;
+}
+.basket-content {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  background-color: rgba(190, 190, 190, 0.863);
+  border-radius: 20px 0 0 0;
+}
+.basket-form {
+  border-radius: 0 20px 0 0;
+  padding: 20px;
+  width: 25vw;
+}
+.basket-icon {
+  font-size: 2.5rem;
+  color: rgba(97, 97, 97, 0.918);
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  background-color: white;
+  margin: 25px 0 0 20px;
+  border-radius: 20px;
+  padding-right: 10px;
+}
+.product img {
+  height: 100px;
+}
+.product-name {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.product-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 80px;
+}
+.product-quantity p {
+  border-right: 1px solid gray;
+  border-left: 1px solid gray;
+  margin: 3px;
+  padding: 0 5px;
+}
+.product-price {
+  display: flex;
+  align-items: center;
+}
+.product-delete {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.total-price {
+  margin: 6%;
+}
+
+.form-heading {
+  height: 7%;
+  margin: 2%;
+}
+
+.form-btn {
+  margin-top: 6%;
+}
+
+/*# sourceMappingURL=panier.css.map */
