@@ -145,6 +145,14 @@ body {
   margin-top: 6%;
 }
 
+.wrapper {
+  min-height: calc(100vh - 50px);
+}
+
+footer {
+  height: 50px;
+}
+
 /*!
  * Bootstrap v5.0.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
