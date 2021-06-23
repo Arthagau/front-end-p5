@@ -1,21 +1,6 @@
 .basket {
-  display: flex;
-  justify-content: space-between;
-  min-height: 80%;
   margin: 5%;
-  max-width: 70vw;
-  &-heading {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 5% 25% 0 0;
-    height: 15%;
-  }
   &-content {
-    display: flex;
-    flex-direction: column;
-    width: 40vw;
-    background-color: rgba(190, 190, 190, 0.863);
     border-radius: 20px 0 0 0;
   }
   &-form {
@@ -25,13 +10,11 @@
   }
   &-icon {
     font-size: 2.5rem;
-    color: rgba(97, 97, 97, 0.918);
+    color: rgb(255, 255, 255);
   }
 }
 
 .product {
-  display: flex;
-  justify-content: space-between;
   width: 80%;
   background-color: white;
   margin: 25px 0 0 20px;
@@ -54,8 +37,6 @@
     & p {
       border-right: 1px solid gray;
       border-left: 1px solid gray;
-      margin: 3px;
-      padding: 0 5px;
     }
   }
   &-price {
@@ -68,14 +49,6 @@
     font-size: 1.5rem;
   }
 }
-.total-price {
-  margin: 6%;
-}
 .form-heading {
   height: 7%;
-  margin: 2%;
-}
-
-.form-btn {
-  margin-top: 6%;
 }

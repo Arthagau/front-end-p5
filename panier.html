@@ -44,132 +44,152 @@
         </div>
       </div>
     </header>
-    <div class="basket">
-      <div class="basket-content ml-4">
-        <div class="basket-heading">
-          <i class="fas fa-shopping-basket basket-icon"></i>
-          <h2>Votre panier</h2>
-        </div>
-        <div class="content-resume">
-          <div class="product">
-            <img src="images/oak_1.jpg" alt="Meuble en chêne clair" />
-            <div class="product-name">
-              <h4>Cross Table</h4>
-              <p>Description produit</p>
+    <div class="wrapper">
+      <main class="basket d-flex justify-content-around">
+        <div
+          class="
+            basket-content
+            d-flex
+            flex-column
+            w-50
+            ml-4
+            shadow
+            p-3
+            rounded
+            bg-secondary
+          "
+        >
+          <div
+            class="basket-heading d-flex justify-content-around flex-row w-25"
+          >
+            <i class="fas fa-shopping-basket basket-icon"></i>
+            <h2>Votre panier</h2>
+          </div>
+          <div class="content-resume">
+            <div class="product d-flex justify-content-between shadow-sm">
+              <img src="images/oak_1.jpg" alt="Meuble en chêne clair" />
+              <div class="product-name">
+                <h4>Cross Table</h4>
+                <p>Description produit</p>
+              </div>
+              <div class="product-quantity">
+                <i class="fas fa-minus icon"></i>
+                <p class="m-3 p-2">1</p>
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="product-price">
+                <p>59990€</p>
+              </div>
+              <div class="product-delete">
+                <i class="fas fa-times-circle"></i>
+              </div>
             </div>
-            <div class="product-quantity">
-              <i class="fas fa-minus icon"></i>
-              <p>1</p>
-              <i class="fas fa-plus"></i>
+            <div class="product d-flex justify-content-between shadow-sm">
+              <img src="images/oak_1.jpg" alt="Meuble en chêne clair" />
+              <div class="product-name">
+                <h4>Cross Table</h4>
+                <p>Description produit</p>
+              </div>
+              <div class="product-quantity">
+                <i class="fas fa-minus icon"></i>
+                <p class="m-3 p-2">1</p>
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="product-price">
+                <p>59990€</p>
+              </div>
+              <div class="product-delete">
+                <i class="fas fa-times-circle"></i>
+              </div>
             </div>
-            <div class="product-price">
-              <p>59990€</p>
-            </div>
-            <div class="product-delete">
-              <i class="fas fa-times-circle"></i>
+            <div class="product d-flex justify-content-between shadow-sm">
+              <img src="images/oak_1.jpg" alt="Meuble en chêne clair" />
+              <div class="product-name">
+                <h4>Cross Table</h4>
+                <p>Description produit</p>
+              </div>
+              <div class="product-quantity">
+                <i class="fas fa-minus icon"></i>
+                <p class="m-3 p-2">1</p>
+                <i class="fas fa-plus"></i>
+              </div>
+              <div class="product-price">
+                <p>59990€</p>
+              </div>
+              <div class="product-delete">
+                <i class="fas fa-times-circle"></i>
+              </div>
             </div>
           </div>
-          <div class="product">
-            <img src="images/oak_1.jpg" alt="Meuble en chêne clair" />
-            <div class="product-name">
-              <h4>Cross Table</h4>
-              <p>Description produit</p>
-            </div>
-            <div class="product-quantity">
-              <i class="fas fa-minus icon"></i>
-              <p>1</p>
-              <i class="fas fa-plus"></i>
-            </div>
-            <div class="product-price">
+          <div class="total-price m-5">
+            <h3>
+              Prix total:
               <p>59990€</p>
-            </div>
-            <div class="product-delete">
-              <i class="fas fa-times-circle"></i>
-            </div>
-          </div>
-          <div class="product">
-            <img src="images/oak_1.jpg" alt="Meuble en chêne clair" />
-            <div class="product-name">
-              <h4>Cross Table</h4>
-              <p>Description produit</p>
-            </div>
-            <div class="product-quantity">
-              <i class="fas fa-minus icon"></i>
-              <p>1</p>
-              <i class="fas fa-plus"></i>
-            </div>
-            <div class="product-price">
-              <p>59990€</p>
-            </div>
-            <div class="product-delete">
-              <i class="fas fa-times-circle"></i>
-            </div>
+            </h3>
           </div>
         </div>
-        <div class="total-price">
-          <h3>
-            Prix total:
-            <p>59990€</p>
-          </h3>
-        </div>
-      </div>
-      <form class="basket-form bg-primary">
-        <h2 class="form-heading">Vos coordonnées</h2>
-        <div class="form-group col">
-          <label for="firstName">Nom</label>
-          <input
-            type="text"
-            class="form-control"
-            id="firstName"
-            placeholder="Votre nom"
-            required
-          />
-        </div>
-        <div class="form-group col">
-          <label for="lastName">Prénom</label>
-          <input
-            type="text"
-            class="form-control"
-            id="lastName"
-            placeholder="Votre prénom"
-            required
-          />
-        </div>
-        <div class="form-group col">
-          <label for="Adress">Adresse</label>
-          <input
-            type="text"
-            class="form-control"
-            id="Adress"
-            placeholder="Votre adresse"
-            required
-          />
-        </div>
-        <div class="form-group col">
-          <label for="City">Ville</label>
-          <input
-            type="text"
-            class="form-control"
-            id="City"
-            placeholder="Votre ville"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="contactEmail">Votre adresse email</label>
-          <input
-            type="email"
-            class="form-control"
-            id="contactEmail"
-            aria-describedby="emailHelp"
-            placeholder="Votre email"
-            required
-          />
-        </div>
-        <button type="submit" class="btn btn-primary form-btn">
-          Valider votre commande
-        </button>
-      </form>
+        <form class="basket-form bg-primary shadow p-3 rounded">
+          <h2 class="form-heading m-3">Vos coordonnées</h2>
+          <div class="form-group col">
+            <label for="firstName">Nom</label>
+            <input
+              type="text"
+              class="form-control"
+              id="firstName"
+              placeholder="Votre nom"
+              required
+            />
+          </div>
+          <div class="form-group col">
+            <label for="lastName">Prénom</label>
+            <input
+              type="text"
+              class="form-control"
+              id="lastName"
+              placeholder="Votre prénom"
+              required
+            />
+          </div>
+          <div class="form-group col">
+            <label for="Adress">Adresse</label>
+            <input
+              type="text"
+              class="form-control"
+              id="Adress"
+              placeholder="Votre adresse"
+              required
+            />
+          </div>
+          <div class="form-group col">
+            <label for="City">Ville</label>
+            <input
+              type="text"
+              class="form-control"
+              id="City"
+              placeholder="Votre ville"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Votre adresse email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="contactEmail"
+              aria-describedby="emailHelp"
+              placeholder="Votre email"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            onclick="window.location.href='/front-end/confirm.html'"
+            class="btn btn-success form-btn mt-5"
+          >
+            Valider votre commande
+          </button>
+        </form>
+      </main>
     </div>
     <footer class="footer">
       <ul>

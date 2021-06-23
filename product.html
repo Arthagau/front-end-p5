@@ -45,61 +45,32 @@
       </div>
     </header>
     <div class="wrapper">
-    <div class="container confirmed mt-5">
-        <div class="row">
-            <div class="col-md-8">
-                <h3>
-                    Votre commande a bien été enregistré !
-                </h3>
-                <p>
-                    Bonjour <small>Utilisateur/trice</small>, votre commande sera en cours de préparation dans peu de temps !
-                </p>
-                <p>
-                   Numéro de commande: <small>N° commande</small> et le résumé de votre commande ci-dessous !
-                </p>
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+              <div class="card">
+                <img class="card-img" src="./images/oak_1.jpg" alt="meuble en chêne">
+                <div class="card-body">
+                  <h3 class="card-title">Cross table</h3>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <div>
+                    <label for="choice-color">Choisissez une couleur:</label>
+                    <select name="colors" id="choice-color">
+                        <option value="">Sélectionnez votre couleur</option>
+                        <option value="tan">Tan</option>
+                        <option value="chocolate">Chocolate</option>
+                        <option value="black">Black</option>
+                        <option value="white">White</option>
+                    </select>
+                  </div>
+                  <div class="buy d-flex justify-content-between align-items-center">
+                    <div class="price text-success"><h5 class="mt-4">59990</h5></div>
+                     <a href="#" class="btn btn-success mt-3"><i class="fas fa-shopping-cart"></i>Ajouter au panier</a>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8 mt-5">
-            <table class="table order-resume">
-                <thead>
-                  <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Article</th>
-                    <th scope="col">Quantité</th>
-                    <th scope="col">Prix</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row"><img src="./images/oak_1.jpg" width="120px" alt=""></th>
-                    <td>Cross table</td>
-                    <td>1</td>
-                    <td>59990</td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><img src="./images/oak_2.jpg" width="120px" alt=""></th>
-                    <td>Coffee Table</td>
-                    <td>1</td>
-                    <td>89900</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Total</th>
-                    <td></td>
-                    <td></td>
-                    <td>149890</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8">
-                <button class="btn btn-primary" onclick="window.location.href='/front-end/index.html'">Retourner à l'accueil</button>
-            </div>
-        </div>
+          </div>
     </div>
-</div>
     <footer class="footer">
         <ul>
           <li><a href="#">Contactez nous</a></li>
