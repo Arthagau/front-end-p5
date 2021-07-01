@@ -35,6 +35,19 @@ body {
   text-decoration: none;
 }
 
+#card {
+  background-color: white;
+}
+#card a {
+  text-decoration: none;
+}
+
+#card-name,
+#card-descr,
+#card-price {
+  color: black;
+}
+
 /** navbar **/
 .jumbotron {
   background-color: #955df596;
@@ -44,7 +57,7 @@ body {
   padding-top: 2%;
 }
 
-.products {
+#products {
   margin-top: 25px;
   background-color: #f3e9f1;
   border-radius: 10px;

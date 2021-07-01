@@ -30,8 +30,19 @@ body {
   }
 }
 
+#card {
+  background-color: white;
+  & a {
+    text-decoration: none;
+  }
+}
+#card-name,
+#card-descr,
+#card-price {
+  color: black;
+}
 @import "variable_overrides";
 @import "./index.scss";
 @import "./panier.scss";
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
-@import url('https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap");
