@@ -1,12 +1,13 @@
+import ProductModel from '../Model/ProductModel.js';
+import {BASE_API_URL} from "../config.js"
 
 async function getData(){
-    const response = await fetch('http://localhost:3000/api/furniture');
+    const response = await fetch(BASE_API_URL +'/furniture');
     const data = await response.json();
     return data;
 }
-getData().then(newProducts);
 
-function newProducts(data){
+function newProduct(data){
     const furniture=document.getElementById('furniture');
 
     for (let i=0;i<data.length; i++) {
@@ -22,7 +23,7 @@ function newProducts(data){
         let newPara1 = document.createElement('p')
         let newPara2 = document.createElement('p')
 
-        newA.href= 'product.html';
+        newA.href= 'product.html?id='+data[i]._id;
         newImg.src=data[i].imageUrl;
         newH3.textContent=data[i].name;
         newPara1.textContent=data[i].description;
@@ -51,3 +52,4 @@ function newProducts(data){
         newDiv4.appendChild(newPara2);
     }
 }
+getData().then(newProduct);
