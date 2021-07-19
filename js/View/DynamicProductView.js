@@ -1,20 +1,4 @@
-/* Récupération de l'id du produit et des données correspondant à l'id */
-import {getId} from '../Controller/ProductController.js';
-getId().then(function(dataAPI) {
-        newImg.src = dataAPI.imageUrl; // insertion des données dans le HTML
-        newH3.textContent=dataAPI.name;
-        newPara.textContent=dataAPI.description;
-        newH5.textContent=(dataAPI.price/100) +`€`;
-
-    newA.href='product.html?id='+product._id;
-    newImg.src=product.imageUrl;
-    newH3.textContent=product.name;
-    newPara1.textContent=product.description;
-    newPara2.textContent=(product.price/100)+'€';
-
-/* Création de la carte pour la page Produit */
-const ProductView=document.getElementById('ProductView');
-
+export function getDynamicProductCard(product){
         let newDiv = document.createElement('div');
         let newImg = document.createElement('img');
         let newDiv1 = document.createElement('div');
@@ -30,6 +14,17 @@ const ProductView=document.getElementById('ProductView');
         let newH5 = document.createElement('h5');
         let newA = document.createElement('a');
         let newI = document.createElement('i');
+
+        newImg.src = product.imageUrl;
+        newH3.textContent=product.name;
+        newPara.textContent=product.description;
+        newH5.textContent=(product.price/100) +`€`;
+
+        for (let i=0;i<product.varnish.length;i++) { // Ajout du choix du vernis
+                let option = document.createElement('option');
+                option.innerText = product.varnish[i];
+                newSelect.appendChild(option);
+        }
 
         newLabel.textContent="Vernis:";
         newLabel1.textContent="Quantité:";
@@ -51,7 +46,7 @@ const ProductView=document.getElementById('ProductView');
         newInput.setAttribute('name', 'quantity');
         newInput.setAttribute('min', '1');
         newInput.setAttribute('max', '99');
-        newInput.setAttribute('placeholder', '0');
+        newInput.setAttribute('value', '1');
         newInput.id = 'quantity';
         newDiv3.classList.add('d-flex','justify-content-between','align-items-center');
         newDiv4.classList.add('price', 'text-success');
@@ -61,7 +56,6 @@ const ProductView=document.getElementById('ProductView');
         newA.href = '#';
         newI.classList.add('fas','fa-shopping-cart');
 
-        ProductView.appendChild(newDiv);
         newDiv.appendChild(newImg);
         newDiv.appendChild(newDiv1);
         newDiv1.appendChild(newH3);
@@ -76,3 +70,7 @@ const ProductView=document.getElementById('ProductView');
         newDiv4.appendChild(newH5);
         newDiv3.appendChild(newA);
         newA.appendChild(newI);
+
+        return newDiv;
+}
+
