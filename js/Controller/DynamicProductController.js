@@ -1,12 +1,13 @@
 import {findById as  findOneProduct} from "../Model/ProductRepository.js";
-import {getDynamicProductCard} from "../View/DynamicProductView.js";
-import {getQueryParam} from "../utils.js"
+import DynamicProductCardView from "../View/DynamicProductView.js";
+import {getQueryParam} from "../utils.js";
+import Basket from "../Model/Basket.js";
 
 createDynamicCard();
 
 async function createDynamicCard(){
-    const ProductViewElt=document.getElementById('ProductView');
-    const product = await findOneProduct(getQueryParam('id'));
-    const viewElt = getDynamicProductCard(product);
-    ProductViewElt.appendChild(viewElt);
-}
+  const ProductViewElt=document.getElementById('ProductView');
+  const product = await findOneProduct(getQueryParam('id'));
+  const view = new DynamicProductCardView(product, new Basket());
+  ProductViewElt.appendChild(view.container);
+};

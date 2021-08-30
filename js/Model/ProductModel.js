@@ -7,5 +7,6 @@ export default class ProductModel {
         this.varnish = data.varnish || ''
         this._id= data._id || ''
     }
+
 }
 
