@@ -4,6 +4,9 @@ export default class ProductModel {
         this.description= data.description || ''
         this.imageUrl= data.imageUrl || ''
         this.price= data.price || ''
+        this.varnish = data.varnish || ''
+        this._id= data._id || ''
     }
+
 }
 

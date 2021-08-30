@@ -1,6 +1,11 @@
-import {BASE_API_URL} from "../config.js"
+import {findAll as  findAllProducts} from "../Model/ProductRepository.js";
+import {getProductCard} from "../View/ProductView.js";
 
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const idProduct = urlParams.get('id')
-console.log(idProduct);
+function addAllProductsCards(products){
+    for (let i=0;i<products.length; i++) {
+        furniture.appendChild(getProductCard(products[i]));
+    }
+}
+    
+const furnitureElt=document.getElementById('furniture');
+findAllProducts().then(products => addAllProductsCards(products));
