@@ -44,8 +44,8 @@
         </div>
       </div>
     </header>
-    <div class="wrapper d-flex flex-column">
-      <main class="basket m-auto w-25 p-3">
+    <div class="wrapper d-flex flex-column col col-md-7 mx-auto">
+      <main class="basket m-auto w-100">
         <div
           class="
             basket-content
@@ -57,14 +57,23 @@
             bg-secondary
           "
         >
-          <div class="basket-heading d-flex justify-content-around flex-row">
-            <i class="fas fa-shopping-basket basket-icon"></i>
-            <h2>Votre panier</h2>
+          <div
+            class="
+              basket-heading
+              d-flex
+              justify-content-around
+              flex-row
+              col-md-6
+              mx-auto
+            "
+          >
+            <i class="fas fa-shopping-basket basket-icon p-1"></i>
+            <h2 class="p-1">Votre panier</h2>
           </div>
           <div
             class="content-resume d-flex flex-column justify-content-center"
           ></div>
-          <div class="m-5">
+          <div class="p-2">
             <h3 class="d-flex">
               Prix total:
               <p id="total-price">0€</p>
@@ -76,7 +85,7 @@
         </div>
       </main>
       <form
-        class="bg-primary d-flex flex-column m-auto shadow p-3 w-25 rounded"
+        class="bg-primary d-flex flex-column m-auto shadow p-3 rounded"
         id="basketForm"
       >
         <div class="form-group col">
