@@ -1,0 +1,26 @@
+.jumbotron {
+  background-color: #955df596;
+  height: 200px;
+  h1 {
+    padding-top: 2%;
+  }
+}
+
+#products {
+  margin-top: 25px;
+  background-color: $primary;
+  border-radius: 10px;
+  padding: 25px 10px;
+}
+
+.card {
+  margin: 40px;
+  & a {
+    text-decoration: none;
+    color: black;
+  }
+  &-img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
