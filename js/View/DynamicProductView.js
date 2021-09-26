@@ -1,4 +1,5 @@
 export default class DynamicProductCardView {
+  // on crée ici le visuel pour la page dynamique
   constructor(product, basket) {
     this.product = product;
     this.productNameElt = null;
@@ -30,7 +31,7 @@ export default class DynamicProductCardView {
     newImg.src = product.imageUrl;
     newH3.textContent = product.name;
     newPara.textContent = product.description;
-    newH5.textContent = product.price / 100  + `€`;
+    newH5.textContent = product.price / 100 + `€`;
 
     for (let i = 0; i < product.varnish.length; i++) {
       let option = document.createElement("option");
@@ -70,7 +71,11 @@ export default class DynamicProductCardView {
     newInput.id = "quantity";
     this.quantityElt = newInput;
 
-    newDiv3.classList.add("d-flex", "justify-content-between", "align-items-center");
+    newDiv3.classList.add(
+      "d-flex",
+      "justify-content-between",
+      "align-items-center"
+    );
     newDiv4.classList.add("price", "text-success");
     newH5.classList.add("mt-4");
 
@@ -82,7 +87,8 @@ export default class DynamicProductCardView {
     newI.classList.add("fas", "fa-shopping-cart");
     this.addToBasketElt = newA;
     this.addToBasketElt.addEventListener("click", () =>
-      this.onAddToBasketClick());
+      this.onAddToBasketClick()
+    );
 
     newDiv.appendChild(newImg);
     newDiv.appendChild(newDiv1);
@@ -103,10 +109,23 @@ export default class DynamicProductCardView {
   }
 
   onAddToBasketClick() {
-    this.basket.addProduct(this.product, this.varnishSelectElt.value, this.quantityElt.value)
-    if(window.confirm( `${this.quantityElt.value} ${this.productNameElt.innerHTML} avec le vernis ${this.varnishSelectElt.value} a bien été ajouté au panier
-      Consultez le panier OK ou revenir à l'accueil ANNULER`)){
-      window.location.href = 'panier.html';
+    // si la quantité est comprise entre 1 et 99 on ajoute l'élément au panier, sinon on avertit l'utilisateur
+    if (this.quantityElt.value > 0 && this.quantityElt.value < 100) {
+      this.basket.addProduct(
+        this.product,
+        this.varnishSelectElt.value,
+        this.quantityElt.value
+      );
+      if (
+        window.confirm(`${this.quantityElt.value} ${this.productNameElt.innerHTML} avec le vernis ${this.varnishSelectElt.value} a bien été ajouté au panier
+        Consultez le panier OK ou rester sur la page ANNULER`)
+      ) {
+        window.location.href = "basket.html";
       }
+    } else {
+      window.alert(
+        "Attention : la quantité doit être comprise entre 1 et 99 !"
+      );
+    }
   }
-};
+}

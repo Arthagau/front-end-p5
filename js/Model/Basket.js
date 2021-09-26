@@ -1,67 +1,62 @@
 export default class Basket {
-    
-  constructor(){
+  constructor() {
     this.products = this.__loadFromStorage();
   }
 
-  __loadFromStorage(){
-    let productsInStorage = JSON.parse(localStorage.getItem('product'));
-    if(Array.isArray(productsInStorage)){
+  __loadFromStorage() {
+    // on récupère dans le LS la liste des produits si elle existe, sinon on renvoie un tableau vide
+    let productsInStorage = JSON.parse(localStorage.getItem("products"));
+    if (Array.isArray(productsInStorage)) {
       return productsInStorage;
-    }
-    else{
+    } else {
       return [];
     }
-  };
-
-  __saveToStorage(){
-    localStorage.setItem('product', JSON.stringify(this.products));
   }
 
-
-  /**
-   * Trouver l'index d'un produit avec un vernis spécifique
-   * @param varnish {String}
-   * @param productId {String}
-   * @returns integer|null
-   */
-  searchIndexFromProductAndVarnish(productId,varnish){
-    console.log(this.products.findIndex(e => e.varnish === varnish && e.product.productId === productId));
+  __saveToStorage() {
+    // on crée l'objet JSON à partir des différents produits ajoutés
+    localStorage.setItem("products", JSON.stringify(this.products));
   }
 
-  getTotal(){
-    var totalPriceArray = this.products.map(function(e) {
-      return (e.product.price * e.quantity) / 100;
+  searchIndexFromProductAndVarnish(_id, varnish) {
+    // permet d'obtenir l'index d'un produit dans la liste selon son id et son vernis
+    return this.products.findIndex(
+      (e) => e.varnish === varnish && e.product._id === _id
+    );
+  }
+
+  getTotal() {
+    const totalPriceArray = this.products.map(function (e) {
+      return (e.product.price * e.quantity) / 100; // on obtient une nouvelle liste avec le prix de chaque produit multiplié par sa quantité
     });
     const reducer = (acc, curr) => acc + curr;
-    const totalPrice = totalPriceArray.reduce(reducer);
-    return totalPrice + ` €`;
+    return totalPriceArray.reduce(reducer); // au final on additionne tous les prix obtenus pour ressortir le prix total
   }
 
-  clear(){
+  clear() {
     this.products = [];
     this.__saveToStorage();
   }
 
-  addProduct(product,varnish,quantity){    
-    // Verifier avant ajout s'il ne faut pas modifier la quantité d'un produit deja existant 
-    if (false) { // TODO à revoir
-      //this.products[nameProduct].quantity++
+  addProduct(product, varnish, quantity) {
+    const item = this.products.find(
+      (item) => item.varnish === varnish && item.product._id === product._id // on vérifie ici si le produit existe déjà dans l'objet 'product' dans le LS
+    );
+    if (item) {
+      item.quantity += Number(quantity); // si le produit est déjà présent on l'incrémente
     } else {
-    //si je ne trouve pas le couple produit/vernis
-     
-     
-      this.products.push( {product,varnish,quantity:Number(quantity)});
+      this.products.push({ product, varnish, quantity: Number(quantity) }); // sinon on ajoute le produit
     }
-      
-      this.__saveToStorage();
-  };
-
-  removeProductWithVarnish(productId,varnish){
-    // TODO supprimer l'entrée index du tableau de produits & save LS
+    this.__saveToStorage();
   }
 
-  getProducts(){  
+  removeProductWithVarnish(_id, varnish) {
+    const index = this.searchIndexFromProductAndVarnish(_id, varnish); // on se sert de l'index récupéré plus tôt pour enlever le produit correspondant du panier
+    this.products.splice(index, 1);
+    this.__saveToStorage();
+  }
+
+  getProducts() {
     return this.products;
-  };
+  }
 }

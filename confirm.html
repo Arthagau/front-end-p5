@@ -4,12 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Onorico - Votre panier</title>
+    <title>Onorico - Commande validée</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
   </head>
   <body>
     <header>
@@ -36,7 +32,7 @@
                   <a class="nav-link" href="index.html">Accueil</a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="panier.html">Panier</a>
+                  <a class="nav-link" href="basket.html">Panier</a>
                 </li>
               </ul>
             </div>
@@ -50,59 +46,20 @@
           <div class="col-md-8">
             <h3>Votre commande a bien été enregistré !</h3>
             <p>
-              Bonjour <small>Utilisateur/trice</small>, merci de votre commande,
-              celle-ci sera en cours de préparation dans peu de temps !
+              Merci de votre commande, celle-ci sera en cours de préparation
+              dans peu de temps !
             </p>
             <p>
-              Numéro de commande: <small>N° commande</small> et le résumé de
-              votre commande ci-dessous !
+              Numéro de commande
+              <small id="orderId" class="text-success"></small>, le prix total
+              est de <small id="total-order" class="text-success"></small>. A
+              bientôt pour une nouvelle commande sur notre site !
             </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8 mt-5">
-            <table class="table order-resume">
-              <thead>
-                <tr>
-                  <th scope="col"></th>
-                  <th scope="col">Article</th>
-                  <th scope="col">Quantité</th>
-                  <th scope="col">Prix</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">
-                    <img src="./images/oak_1.jpg" width="120px" alt="" />
-                  </th>
-                  <td>Cross table</td>
-                  <td>1</td>
-                  <td>59990</td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    <img src="./images/oak_2.jpg" width="120px" alt="" />
-                  </th>
-                  <td>Coffee Table</td>
-                  <td>1</td>
-                  <td>89900</td>
-                </tr>
-                <tr>
-                  <th scope="row">Total</th>
-                  <td></td>
-                  <td></td>
-                  <td>149890</td>
-                </tr>
-              </tbody>
-            </table>
           </div>
         </div>
         <div class="row">
           <div class="col-md-8">
-            <button
-              class="btn btn-primary"
-              onclick="window.location.href='/front-end-p5/index.html'"
-            >
+            <button class="btn btn-primary" id="back-button">
               Retourner à l'accueil
             </button>
           </div>
@@ -131,6 +88,6 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
-    <script src="./index.js"></script>
+    <script src="./js/View/ConfirmView.js"></script>
   </body>
 </html>
